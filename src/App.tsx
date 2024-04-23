@@ -1,5 +1,5 @@
 import './App.css';
-import MegaverseMap from "./components/MegaverseMap"
+import MegaverseMap from "./components/megaverse.map"
 
 function App() {
   return (
