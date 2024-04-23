@@ -4,5 +4,13 @@ export interface MegaverseMapDto {
 
 export interface MegaverseMapInstanceDto {
   _id: string;
-  content: string[][];
+  content: MegaverseElementDto[][];
+}
+
+export interface MegaverseElementDto {
+  type: number
+}
+
+export interface MegaverseGoalMapDto {
+  goal: string[][];
 }

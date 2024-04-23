@@ -1,0 +1,38 @@
+.megaverse-goal-cell {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.rotate-140deg {
+    transform: rotate(140deg) perspective(0);
+}
+
+.rotate-48deg {
+    transform: rotate(48deg) perspective(0);
+}
+
+.rotate-330deg {
+    transform: rotate(330deg) perspective(0);
+}
+
+.rotate-230deg {
+    transform: rotate(230deg) perspective(0);
+}
+
+.white-soloon {
+    filter: grayscale(100%);
+}
+
+.blue-soloon {
+    filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+}
+
+.red-soloon {
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+}
+
+.purple-soloon {
+   filter: grayscale(100%) brightness(80%) sepia(80%) hue-rotate(-80deg) saturate(600%) contrast(1);
+}

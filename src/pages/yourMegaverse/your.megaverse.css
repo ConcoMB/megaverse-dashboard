@@ -1,0 +1,10 @@
+.megaverse-cell {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.megaverse-cell:hover {
+    cursor: pointer;
+}

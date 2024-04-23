@@ -1,12 +1,24 @@
 import './App.css';
-import MegaverseMap from "./components/megaverse.map"
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import YourMegaverse from "./pages/yourMegaverse/your.megaverse"
+import GoalMegaverse from "./pages/goalMegaverse/goal.megaverse";
 
 function App() {
   return (
-    <div className="appBody">
-      <h1>Your Megaverse</h1>
-      <MegaverseMap />
-    </div>
+    <Tabs className="appBody">
+      <TabList>
+        <Tab>Your Megaverse</Tab>
+        <Tab>Goal Megaverse</Tab>
+      </TabList>
+
+      <TabPanel>
+        <YourMegaverse />
+      </TabPanel>
+      <TabPanel>
+        <GoalMegaverse />
+      </TabPanel>
+    </Tabs>
   );
 }
 
