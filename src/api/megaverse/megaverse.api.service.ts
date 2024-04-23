@@ -1,6 +1,6 @@
 import MegaverseService from "./megaverse.service";
 import axiosInstance from "../axios.instance";
-import { MegaverseGoalMapDto, MegaverseMapDto } from "./dto/megaverse.dto";
+import { ComethDirection, MegaverseGoalMapDto, MegaverseMapDto, SoloonColor } from "./dto/megaverse.dto";
 
 class MegaverseApiService implements MegaverseService {
 
@@ -38,15 +38,72 @@ class MegaverseApiService implements MegaverseService {
     }
   }
 
+  async createCometh(x: number, y: number, direction: ComethDirection): Promise<void> {
+    try {
+      await axiosInstance.post(`/comeths`,
+        {
+          row: x,
+          column: y,
+          direction: direction,
+          candidateId: this.CANDIDATE_ID,
+        });
+    } catch (error) {
+      console.error(error)
+      throw error;
+    }
+  }
+
+  async createSoloon(x: number, y: number, color: SoloonColor): Promise<void> {
+    try {
+      await axiosInstance.post(`/soloons`,
+        {
+          row: x,
+          column: y,
+          color: color,
+          candidateId: this.CANDIDATE_ID,
+        });
+    } catch (error) {
+      console.error(error)
+      throw error;
+    }
+  }
+
   async deletePolyanet(x: number, y: number): Promise<void> {
     try {
-
       await axiosInstance.delete(`/polyanets`,
         { data: {
               row: x,
               column: y,
               candidateId: this.CANDIDATE_ID,
             }});
+    } catch (error) {
+      console.error(error)
+      throw error;
+    }
+  }
+
+  async deleteCometh(x: number, y: number): Promise<void> {
+    try {
+      await axiosInstance.delete(`/comeths`,
+        { data: {
+            row: x,
+            column: y,
+            candidateId: this.CANDIDATE_ID,
+          }});
+    } catch (error) {
+      console.error(error)
+      throw error;
+    }
+  }
+
+  async deleteSoloon(x: number, y: number): Promise<void> {
+    try {
+      await axiosInstance.delete(`/soloons`,
+        { data: {
+            row: x,
+            column: y,
+            candidateId: this.CANDIDATE_ID,
+          }});
     } catch (error) {
       console.error(error)
       throw error;
