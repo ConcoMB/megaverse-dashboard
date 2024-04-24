@@ -1,10 +1,9 @@
 import React from "react";
 import { FC } from "react";
 import { MegaverseProps } from "./megaverse.props";
-import { MegaverseElement, MegaverseElementDto } from "../../api/megaverse/dto/megaverse.dto";
+import { MegaverseElement } from "../../api/megaverse/dto/megaverse.dto";
 
 const Megaverse: FC<MegaverseProps> = ({ megaverse }) => {
-
   const getElementEmoji = (cell: MegaverseElement): string => {
     switch (cell) {
       case MegaverseElement.Space:

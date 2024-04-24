@@ -1,36 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import MegaverseApiService from "../../api/megaverse/megaverse.api.service";
 import {
   MegaverseElement,
-  MegaverseElementDto,
   MegaverseGoalMapDto,
-  MegaverseMapDto
 } from "../../api/megaverse/dto/megaverse.dto";
 import './goal.megaverse.css'
 import Megaverse from "../../components/megaverse/megaverse";
-import megaverse from "../../components/megaverse/megaverse";
+import MegaverseService from "../../api/megaverse/megaverse.service";
 
 function GoalMegaverse() {
-  const apiService = new MegaverseApiService();
+  const apiService: MegaverseService = useMemo(() => new MegaverseApiService(), []);
   const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState(null)
   const [goalMegaverse, setGoalMegaverse] = useState<MegaverseElement[][]>([])
   useEffect( () => {
+    const fetchMap = async (): Promise<void> => {
+      try {
+        const mapDto: MegaverseGoalMapDto = await apiService.getGoalMap()
+        setGoalMegaverse(mapDto.goal)
+      } catch (error: any) {
+        setError(error.message)
+      } finally {
+        setLoading(false)
+      }
+    }
     fetchMap()
-  }, []);
-
-  const fetchMap = async (): Promise<void> => {
-    const mapDto: MegaverseGoalMapDto = await apiService.getGoalMap()
-    setGoalMegaverse(mapDto.goal)
-    setLoading(false)
-  }
+  }, [apiService]);
 
   if (loading) {
     return <div>Loading...</div>
   }
 
-
   return (
-    <Megaverse megaverse={goalMegaverse}/>
+    <div>
+      { error ? <span>Error {error}</span> : <Megaverse megaverse={goalMegaverse} /> }
+    </div>
   )
 }
 

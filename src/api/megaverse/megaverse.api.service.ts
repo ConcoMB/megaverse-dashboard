@@ -26,8 +26,7 @@ class MegaverseApiService implements MegaverseService {
 
   async createPolyanet(x: number, y: number): Promise<void> {
     try {
-      await axiosInstance.post(`/polyanets`,
-        {
+      await axiosInstance.post(`/polyanets`, {
         row: x,
         column: y,
         candidateId: this.CANDIDATE_ID,
@@ -40,8 +39,7 @@ class MegaverseApiService implements MegaverseService {
 
   async createCometh(x: number, y: number, direction: ComethDirection): Promise<void> {
     try {
-      await axiosInstance.post(`/comeths`,
-        {
+      await axiosInstance.post(`/comeths`, {
           row: x,
           column: y,
           direction: direction,
@@ -55,8 +53,7 @@ class MegaverseApiService implements MegaverseService {
 
   async createSoloon(x: number, y: number, color: SoloonColor): Promise<void> {
     try {
-      await axiosInstance.post(`/soloons`,
-        {
+      await axiosInstance.post(`/soloons`, {
           row: x,
           column: y,
           color: color,
@@ -70,11 +67,11 @@ class MegaverseApiService implements MegaverseService {
 
   async deletePolyanet(x: number, y: number): Promise<void> {
     try {
-      await axiosInstance.delete(`/polyanets`,
-        { data: {
-              row: x,
-              column: y,
-              candidateId: this.CANDIDATE_ID,
+      await axiosInstance.delete(`/polyanets`, {
+        data: {
+          row: x,
+          column: y,
+          candidateId: this.CANDIDATE_ID,
             }});
     } catch (error) {
       console.error(error)
