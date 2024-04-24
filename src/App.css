@@ -1,11 +1,8 @@
 .appBody {
-    background: black;
     display: flex;
     color: white;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    min-height: 100vh;
 }
 
 .danger-button {
@@ -17,6 +14,7 @@
 }
 
 button {
+    font-weight: bold;
      appearance: button;
      backface-visibility: hidden;
      border-radius: 6px;
@@ -56,6 +54,11 @@ button:focus {
     border-color: #aaa;
     color: white;
     border-radius: 5px 5px 0 0;
+    font-weight: bold;
+}
+
+.react-tabs__tab {
+    font-size: 25px;
 }
 
 .react-tabs__tab:focus:after {
@@ -68,6 +71,7 @@ button:focus {
 .flex-container {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .vertical {

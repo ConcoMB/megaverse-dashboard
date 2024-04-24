@@ -5,7 +5,6 @@ import { MegaverseElement } from "../../api/megaverse/dto/megaverse.dto";
 import "./megaverse.map.css"
 
 const MegaverseMap: FC<MegaverseMapProps> = ({ megaverse, onCellClickedListener }) => {
-
   const getElementEmoji = (cell: MegaverseElement): string => {
     switch (cell) {
       case MegaverseElement.Space:

@@ -172,12 +172,20 @@ function YourMegaverse() {
   }
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div><h3>Loading...</h3></div>
   }
 
   return (
     <div>
-      {log && <div className="overlay"><div className="ellipsis-container"><p>{log}</p></div></div>}
+      { log &&
+        <div className="overlay">
+          <div className="flex-container">
+            <div className="ellipsis-container">
+              <p>{log}</p>
+            </div>
+          </div>
+        </div>
+      }
       <CreateElementModal
         x={rowSelected}
         y={columnSelected}

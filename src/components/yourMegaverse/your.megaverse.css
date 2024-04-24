@@ -8,7 +8,7 @@
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
@@ -33,7 +33,6 @@
     align-items: center;
     width: 25%;
     margin-top: 200px;
-    padding-left: 40%;
 }
 
 @keyframes ellipsis {

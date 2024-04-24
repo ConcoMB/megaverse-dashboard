@@ -30,7 +30,7 @@ function GoalMegaverse() {
   }, [apiService, candidateId]);
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div><h3>Loading...</h3></div>
   }
 
   return (
