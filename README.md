@@ -33,3 +33,7 @@ You can modify a specific item by clicking on it. A modal will pop up and you ca
 
 ![Screenshot 2024-04-24 at 14 40 37](https://github.com/ConcoMB/megaverse-dashboard/assets/1123168/65088c18-7358-40b5-800e-0da5858033d4)
 
+## Improvements
+
+The API has a relatively short span of time before it rejects requests for doing too many. For the sake of this exercise, this has been resolved by delaying requests, although is not a very elegant solution. 
+A more robust solution would be to build a Dispatcher, where API calls are enqueued, and it should manage the requests failures and try again.
