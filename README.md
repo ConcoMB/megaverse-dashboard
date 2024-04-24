@@ -16,8 +16,20 @@ After you enter it, you be redirected to a screen with two tabs: One detailing y
 
 ### Your Megaverse
 
+![Screenshot 2024-04-24 at 14 40 20](https://github.com/ConcoMB/megaverse-dashboard/assets/1123168/e9beadb0-50c8-41bd-8038-0c169cc4dbd6)
+
 You have 3 possible actions in this screen:
 
-* You can modify a specific item by clicking on it.
-* You can delete all elements by clicking the red button
-* You can automatically build your Megaverse to be your goal Megaverse by clicking the blue button
+#### Automatic build
+You can automatically build your Megaverse to be your goal Megaverse by clicking the blue button
+
+![Screenshot 2024-04-24 at 14 40 55](https://github.com/ConcoMB/megaverse-dashboard/assets/1123168/af831bf5-f970-4ab7-80aa-b0ad6398c424)
+
+#### Erase all
+You can delete all elements by clicking the red button
+
+#### Manual modification
+You can modify a specific item by clicking on it. A modal will pop up and you can select your desired element.
+
+![Screenshot 2024-04-24 at 14 40 37](https://github.com/ConcoMB/megaverse-dashboard/assets/1123168/65088c18-7358-40b5-800e-0da5858033d4)
+
