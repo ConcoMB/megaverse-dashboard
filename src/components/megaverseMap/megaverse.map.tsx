@@ -1,9 +1,11 @@
 import React from "react";
 import { FC } from "react";
-import { MegaverseProps } from "./megaverse.props";
+import { MegaverseMapProps } from "./megaverse.map.props";
 import { MegaverseElement } from "../../api/megaverse/dto/megaverse.dto";
+import "./megaverse.map.css"
 
-const Megaverse: FC<MegaverseProps> = ({ megaverse }) => {
+const MegaverseMap: FC<MegaverseMapProps> = ({ megaverse, onCellClickedListener }) => {
+
   const getElementEmoji = (cell: MegaverseElement): string => {
     switch (cell) {
       case MegaverseElement.Space:
@@ -60,7 +62,9 @@ const Megaverse: FC<MegaverseProps> = ({ megaverse }) => {
               row.map((cell: MegaverseElement, j: number) => {
                 return <td
                   key={`megaverse-cell-${i}-${j}`}
-                  className={`megaverse-cell ${getElementClass(cell)}`} >
+                  className={`megaverse-cell ${getElementClass(cell)}`}
+                  onClick={() => onCellClickedListener && onCellClickedListener(i, j) }
+                >
                   {getElementEmoji(cell)}
                 </td>
               })
@@ -73,4 +77,4 @@ const Megaverse: FC<MegaverseProps> = ({ megaverse }) => {
   );
 }
 
-export default Megaverse;
+export default MegaverseMap;

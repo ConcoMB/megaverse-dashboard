@@ -41,7 +41,6 @@ button {
      user-select: none;
      -webkit-user-select: none;
      touch-action: manipulation;
-     width: 100%;
  }
 
 button:disabled {
@@ -64,4 +63,13 @@ button:focus {
     left: 0px;
     right: 0px;
     bottom: 0px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.vertical {
+    flex-direction: column;
 }

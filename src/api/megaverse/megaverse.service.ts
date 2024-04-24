@@ -1,12 +1,12 @@
 import { ComethDirection, MegaverseGoalMapDto, MegaverseMapDto, SoloonColor } from "./dto/megaverse.dto";
 
 export default interface MegaverseService {
-  getGoalMap(): Promise<MegaverseGoalMapDto>;
-  getMap(): Promise<MegaverseMapDto>;
-  createPolyanet(x: number, y: number): Promise<void>;
-  deletePolyanet(x: number, y: number): Promise<void>;
-  createSoloon(x: number, y: number, color: SoloonColor): Promise<void>;
-  deleteSoloon(x: number, y: number): Promise<void>;
-  createCometh(x: number, y: number, direction: ComethDirection): Promise<void>;
-  deleteCometh(x: number, y: number): Promise<void>;
+  getGoalMap(candidateId: string): Promise<MegaverseGoalMapDto>;
+  getMap(candidateId: string): Promise<MegaverseMapDto>;
+  createPolyanet(candidateId: string, x: number, y: number): Promise<void>;
+  deletePolyanet(candidateId: string, x: number, y: number): Promise<void>;
+  createSoloon(candidateId: string, x: number, y: number, color: SoloonColor): Promise<void>;
+  deleteSoloon(candidateId: string, x: number, y: number): Promise<void>;
+  createCometh(candidateId: string, x: number, y: number, direction: ComethDirection): Promise<void>;
+  deleteCometh(candidateId: string, x: number, y: number): Promise<void>;
 }

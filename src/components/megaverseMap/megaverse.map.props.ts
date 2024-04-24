@@ -1,5 +1,6 @@
 import { MegaverseElement } from "../../api/megaverse/dto/megaverse.dto";
 
-export interface MegaverseProps {
+export interface MegaverseMapProps {
   megaverse: MegaverseElement[][];
+  onCellClickedListener?: Function;
 }

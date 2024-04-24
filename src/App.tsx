@@ -1,23 +1,27 @@
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import YourMegaverse from "./pages/yourMegaverse/your.megaverse"
-import GoalMegaverse from "./pages/goalMegaverse/goal.megaverse";
 import 'react-tabs/style/react-tabs.css';
+import { Routes, Route } from "react-router";
 import './App.css';
+import CandidatePage from "./pages/candidate/candidate.page";
+import MegaversePage from "./pages/megaverse/megaverse.page";
+import { PrivateRoute } from "./privateRoutes/private.route";
 
 function App() {
   return (
-    <Tabs className="appBody">
-      <TabList>
-        <Tab>Your Megaverse</Tab>
-        <Tab>Goal Megaverse</Tab>
-      </TabList>
-      <TabPanel>
-        <YourMegaverse />
-      </TabPanel>
-      <TabPanel>
-        <GoalMegaverse />
-      </TabPanel>
-    </Tabs>
+    <Routes>
+      <Route
+        path="/"
+        element={<CandidatePage/>}
+      />
+      <Route
+        path="/map"
+        element={
+          <PrivateRoute
+            path="/map"
+            component={MegaversePage}
+          />
+        }
+      />
+    </Routes>
   );
 }
 
